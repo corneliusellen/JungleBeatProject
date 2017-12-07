@@ -9,19 +9,14 @@ class LinkedList
     @head = head
   end
 
-  def find_last_node
-    until current_node.next_node.nil?
-      current_node = current_node.next_node
-    end
-    current_node
-  end
-
   def append(data)
     if @head.nil?
       @head = Node.new(data)
       else
         current_node = @head
-c       current_node.find_last_node
+       until current_node.next_node.nil?
+          current_node = current_node.next_node
+        end
       current_node.next_node = Node.new(data)
     end
   end
